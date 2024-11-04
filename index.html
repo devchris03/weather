@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Buscar Clima</title>
 </head>
 <body>
-    
+    <main class="main">
+        <h1 class="title">Busca el clima</h1>
+        <section class="result" id="result">
+            <p>Agrega tu ciudad y pais, el resultado se mostrará aqui.</p>
+        </section>
+        <form action="" class="form" id="form">
+            <input type="text" id="ciudad" class="commom" name="ciudad" placeholder="Ingresa tu ciudad">
+            <select id="pais" class="commom">
+                <option disabled selected value="">-- Selecciona tu pais ---</option>
+                <option value="AR">Argentina</option>
+                <option value="CO">Colombia</option>
+                <option value="CR">Costa Rica</option>
+                <option value="ES">España</option>
+                <option value="US">Estados Unidos</option>
+                <option value="MX">México</option>
+                <option value="PE">Perú</option>
+            </select>
+            <input type="submit" value="Obtener Clima" class="commom submit" id="submit" aria-label="Click para obtener resultado del clima">
+        </form>
+    </main>
 </body>
 </html>

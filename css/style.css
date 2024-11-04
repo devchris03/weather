@@ -1,0 +1,66 @@
+:root {
+    font-size: 16px;
+    --colorBlack: #1d1d1d;
+    --colorWhite: #f5f1f1;
+    --colorGray: #7a7979;
+    --colorBlue: #062c48;
+}
+
+body {
+    margin: 0px;
+    block-size: 100vh;
+    background-image: url(../img/sky.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: var(--colorBlack);
+}
+
+input,
+select {
+    border: 1px solid var(--colorGray);
+}
+
+.main {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    block-size: 100%;
+    padding-inline: 1rem;
+    max-inline-size: 37.5rem;
+    margin-inline: auto;
+}
+
+.title {
+    color: var(--colorWhite);
+    text-transform: uppercase;
+}
+
+.form {
+    padding-block: 2rem 5rem;
+}
+
+.commom { 
+    display: block;
+    inline-size: 100%;
+    box-sizing: border-box;
+    padding: .5rem;
+    border-radius: .5rem;
+    margin-block-end: 1rem;
+    font-size: 1rem;
+}
+
+
+
+
+.submit {
+    background: var(--colorBlue);
+    border-color: var(--colorBlue);
+    color: var(--colorWhite);
+    font-weight: 700;
+    cursor: pointer;
+    padding-block: .75rem;
+    margin-block-start: 2rem;
+    text-transform: uppercase;
+}
