@@ -76,28 +76,38 @@ function showWeather(data) {
 
     const {name, main: {temp, temp_max, temp_min}} = data;
 
+    const tempValue = kelvinToCelsius(temp);
+    const maxValue = kelvinToCelsius(temp_max);
+    const minValue = kelvinToCelsius(temp_min);
+
     const place = document.createElement('P');
     place.textContent = name;
     place.classList.add('name');
 
     const tempNow = document.createElement('P');
-    tempNow.innerHTML = `${temp} &#x2103`;
+    tempNow.innerHTML = `${tempValue} &#x2103`;
     tempNow.classList.add('tempNow');
 
     const tempMax = document.createElement('P');
-    tempMax.innerHTML = `Max: ${temp_max} &#x2103`;
+    tempMax.innerHTML = `Max: ${maxValue} &#x2103`;
     
     const tempMin = document.createElement('P');
-    tempMin.innerHTML = `Min: ${temp_min} &#x2103`;
+    tempMin.innerHTML = `Min: ${minValue} &#x2103`;
 
     const details = document.createElement('DIV');
-    details.append(tempMax, tempMin);
+    details.append(tempMin, tempMax);
     details.classList.add('details');
 
     const weatherDiv = document.createElement('DIV');
     weatherDiv.append(place, tempNow, details);
 
     result.appendChild(weatherDiv);
+}
+
+
+// pasa grados kelvin a celsius
+function kelvinToCelsius(grade) {
+    return parseInt(grade - 273.15); 
 }
 
 
