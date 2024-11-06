@@ -15,6 +15,17 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     text-align: center;
     color: var(--colorWhite);
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        inline-size: 100%;
+        block-size: 100%;
+        background: rgb(000, 000, 000, .5);
+        position: absolute;
+        z-index: -1;
+    }
 }
 
 input,
@@ -22,18 +33,31 @@ select {
     border: 1px solid var(--colorGray);
 }
 
+h1 {
+    font-size: 1.75rem;
+}
+
+h1,
 p {
-    margin-block: 1rem;
+    margin-block: 0;
+}
+
+img {
+    display: block;
+    margin-inline: auto;
 }
 
 .main {
     display: grid;
     grid-template-rows: auto 1fr auto;
+    gap: 1.5rem;
 
     block-size: 100%;
     padding-inline: 1rem;
     max-inline-size: 37.5rem;
     margin-inline: auto;
+    padding-block: 2rem 5rem;
+    box-sizing: border-box;
 }
 
 .title {
@@ -48,9 +72,6 @@ p {
     padding-block: .5rem;
 }
 
-.form {
-    padding-block: 2rem 5rem;
-}
 
 .commom { 
     display: block;
@@ -88,8 +109,11 @@ p {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+}
 
-    & p {
-        margin: 0px;
-    }
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
 }

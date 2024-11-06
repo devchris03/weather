@@ -84,6 +84,20 @@ function showWeather(data) {
     place.textContent = name;
     place.classList.add('name');
 
+    // insertar imagen
+    const imagen = document.createElement('DIV');
+    if(tempValue < 10) {
+        imagen.innerHTML = `<img src="./img/icon-cold.svg" alt="nube abrigada" width="100" height="100" />`
+    } else if (tempValue >= 10 &&  tempValue < 20 ) {
+        imagen.innerHTML = `<img src="./img/icon-cloud.svg" alt="nube abrigada" width="100" height="100" />`
+    } else if (tempValue >= 20 && tempValue < 30 ) {
+        imagen.innerHTML = `<img src="./img/icon-normal.svg" alt="nube abrigada" width="100" height="100" />`
+    } else if (tempValue >= 30) {
+        imagen.innerHTML = `<img src="./img/icon-sun.svg" alt="nube abrigada" width="100" height="100" />`
+    } else {
+        imagen.innerHTML = `<img src="./img/icon-start.svg" alt="nube abrigada" width="100" height="100" />`
+    }
+
     const tempNow = document.createElement('P');
     tempNow.innerHTML = `${tempValue} &#x2103`;
     tempNow.classList.add('tempNow');
@@ -98,10 +112,11 @@ function showWeather(data) {
     details.append(tempMin, tempMax);
     details.classList.add('details');
 
-    const weatherDiv = document.createElement('DIV');
-    weatherDiv.append(place, tempNow, details);
+    // const weatherDiv = document.createElement('DIV');
+    // weatherDiv.classList.add('weatherDiv')
+    // weatherDiv.append(place, imagen, tempNow, details);
 
-    result.appendChild(weatherDiv);
+    result.append(place, imagen, tempNow, details);
 }
 
 
