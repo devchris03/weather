@@ -101,3 +101,9 @@ function showWeather(data) {
 }
 
 
+// borrar resultado previo
+function cleanResult() {
+    while(result.firstChild) {
+        result.removeChild(result.firstChild);
+    }
+}
